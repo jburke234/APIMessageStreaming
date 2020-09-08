@@ -4,7 +4,7 @@ The goal of this project was to gain a better understanding of how gRPC and Dock
 
 # Architecture 
 
-![Architecture Diagram](https://imgur.com/HeQRxre)
+![](https://i.ibb.co/N308QTP/arch-Diagram.png)
 
 # App Explanation 
 
