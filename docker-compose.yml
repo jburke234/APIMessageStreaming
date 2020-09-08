@@ -1,0 +1,23 @@
+version: '3' 
+
+services: 
+  server: 
+    build: './Server'
+    ports:  
+      - "50051:50051" 
+  client: 
+    build: './Client'
+    depends_on:
+      - "server" 
+    command: ["./wait-for-it.sh", "server:50051", "--", "python", "client.py"]
+  redis: 
+    image: redis:alpine 
+    ports:
+      - "6379:6379" 
+  weblogs: 
+    build: './Web'
+    ports: 
+      - "8080:5000" 
+    depends_on: 
+      - "redis"
+

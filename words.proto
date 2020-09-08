@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service WordService {
+  rpc  RequestWord (WordRequest) returns (stream WordReply) {}
+}
+
+
+message WordRequest { 
+  string name = 1;
+}
+
+
+message WordReply {
+  string message = 1;
+}
